@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.core.content.PermissionChecker;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.tarunguptaraja.raktdaan.R;
 import com.tarunguptaraja.raktdaan.dataModels.RequestDataModel;
 
@@ -40,6 +41,21 @@ public class RequestAdaptor extends RecyclerView.Adapter<RequestAdaptor.ViewHold
     public void onBindViewHolder(@NonNull final ViewHolder holder,
                                  final int position) {
         holder.message.setText(dataSet.get(position).getMessage());
+        Glide.with(context).load(dataSet.get(position).getImageUrl()).into(holder.imageView);
+        holder.callButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+
+        });
+
+        holder.shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
     }
 
